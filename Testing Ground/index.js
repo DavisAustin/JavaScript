@@ -1,9 +1,13 @@
-function multiplyThese (a,b) {
-    let result = a * b;
-    return result;
-};
-
+// GLOBALLY SCOPED VARIABLES
 const firstNumber = 10;
 const secondNumber = 13;
 
-console.log(multiplyThese(firstNumber,secondNumber));
+// Immediately invoked function
+let multiplyThese = (function(a,b) {
+    // Locally scoped variable
+    let result = a * b;
+    return result;
+})(firstNumber,secondNumber);
+
+console.log(multiplyThese);
+
