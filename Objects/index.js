@@ -1,4 +1,4 @@
-var course = new Object();
+//var course = new Object();
 
 // course.title = "JavaScript Essential Training";
 // course.instructor = "Morten Rand-Hendriksen";
@@ -36,4 +36,5 @@ var courses = [
     course02 = new Course("Up and Running with ECMA Script 6", "Eve Porcello", 2, true, 6)
 ];
 
+console.log(courses[0]);
 console.log(courses[1]);
