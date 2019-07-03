@@ -18,8 +18,6 @@
 // }
 
 
-// var currentDate = new Date();
-
 function Course(title, instructor, level, published, views) {
     this.title = title;
     this.instructor = instructor;
@@ -37,4 +35,4 @@ var courses = [
 ];
 
 console.log(courses[0]);
-console.log(courses[1]);
+console.log(courses[1].instructor);
