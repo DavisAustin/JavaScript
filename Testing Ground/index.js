@@ -42,13 +42,7 @@
 // console.log(newPerson[2]);
 // console.log(newPerson[0]);
 // console.log(newPerson[3]);
-var timerDuration = 20;
 
-function countDown(a) {
-  while(a > 0) {
-    a--;
-    return a;
-  };
-};
 
-console.log(countDown(timerDuration));
+const TIMER = document.querySelector("#timer");
+TIMER.innerHTML = "Hello World!";
