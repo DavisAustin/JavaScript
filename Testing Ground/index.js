@@ -43,6 +43,9 @@
 // console.log(newPerson[0]);
 // console.log(newPerson[3]);
 
+// const TIMER = document.querySelector("#timer");
+// TIMER.innerHTML = "Hello World!";
+
 const FIRSTNAMES = ["Amy", "Brian", "Cody", "Dennis", "Ellen", "Fredrick", "Ginger", "Heather", "Izzy", "James"];
 
 const LASTNAMES = ["Anderson", "Brady", "Collins", "Davis", "Eisen", "Foster", "Gordon", "Hamelton", "Isawa", "Jenson"];

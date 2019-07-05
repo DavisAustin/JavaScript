@@ -1,0 +1,11 @@
+.title {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 3rem;
+    color: #333;
+}
+
+.button {
+    background-color: lightseagreen;
+    padding: 40px;
+    width: 140px;
+}
