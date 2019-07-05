@@ -24,7 +24,7 @@
 
 // console.log(myTool);
 
-//More Object Practice
+// // More Object Practice
 // function Person(name, age, favoriteColor) {
 //   this.name = name,
 //   this.age = age,
@@ -46,3 +46,5 @@
 
 const TIMER = document.querySelector("#timer");
 TIMER.innerHTML = "Hello World!";
+
+document.querySelector("#timer").style = "color: #555; font-family: helvetica; font-size: 3em;"
