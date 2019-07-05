@@ -42,13 +42,26 @@
 // console.log(newPerson[2]);
 // console.log(newPerson[0]);
 // console.log(newPerson[3]);
-var timerDuration = 20;
 
-function countDown(a) {
-  while(a > 0) {
-    a--;
-    return a;
-  };
+const FIRSTNAMES = ["Amy", "Brian", "Cody", "Dennis", "Ellen", "Fredrick", "Ginger", "Heather", "Izzy", "James"];
+
+const LASTNAMES = ["Anderson", "Brady", "Collins", "Davis", "Eisen", "Foster", "Gordon", "Hamelton", "Isawa", "Jenson"];
+
+
+function nameGenerator() {
+    return "My name is " + pickFirstName() + " " + pickLastName() + ".";
 };
 
-console.log(countDown(timerDuration));
+function randomNumber() {
+  return Math.floor(Math.random()*10);
+};
+
+function pickFirstName() {
+  return FIRSTNAMES[randomNumber()];
+};
+
+function pickLastName() {
+  return LASTNAMES[randomNumber()];
+};
+
+console.log(nameGenerator());
