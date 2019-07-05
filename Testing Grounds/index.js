@@ -46,25 +46,58 @@
 // const TIMER = document.querySelector("#timer");
 // TIMER.innerHTML = "Hello World!";
 
-const FIRSTNAMES = ["Amy", "Brian", "Cody", "Dennis", "Ellen", "Fredrick", "Ginger", "Heather", "Izzy", "James"];
 
-const LASTNAMES = ["Anderson", "Brady", "Collins", "Davis", "Eisen", "Foster", "Gordon", "Hamelton", "Isawa", "Jenson"];
+// //NAME GENERATOR
+// const FIRSTNAMES = ["Amy", "Brian", "Cody", "Dennis", "Ellen", "Fredrick", "Ginger", "Heather", "Izzy", "James"];
+
+// const LASTNAMES = ["Anderson", "Brady", "Collins", "Davis", "Eisen", "Foster", "Gordon", "Hamelton", "Isawa", "Jenson"];
 
 
-function nameGenerator() {
-    return "My name is " + pickFirstName() + " " + pickLastName() + ".";
+// function nameGenerator() {
+//     return "My name is " + pickFirstName() + " " + pickLastName() + ".";
+// };
+
+// function randomNumber() {
+//   return Math.floor(Math.random()*10);
+// };
+
+// function pickFirstName() {
+//   return FIRSTNAMES[randomNumber()];
+// };
+
+// function pickLastName() {
+//   return LASTNAMES[randomNumber()];
+// };
+
+// console.log(nameGenerator());
+
+const EQUATION = document.querySelector("#equation");
+const ANSWER = document.querySelector("#answer");
+
+// Check if answer is equal to equation when user presses enter
+function checkAnswer() {
 };
 
+function getUserInput() {
+    var userInput = ANSWER.nodeValue;
+};
+
+// Create an addition equation
+function createAdditionEquation() {
+    var a = randomNumber();
+        b = randomNumber();
+    EQUATION.innerHTML = a + " + " + b;
+    var answer = a + b;
+    return answer;
+};
+
+// Pick a random number between 1 and 10
 function randomNumber() {
-  return Math.floor(Math.random()*10);
+    var randomNumber = Math.floor(Math.random()*11);
+    if (randomNumber == 0) {
+        randomNumber++;
+    };
+    return randomNumber;
 };
 
-function pickFirstName() {
-  return FIRSTNAMES[randomNumber()];
-};
-
-function pickLastName() {
-  return LASTNAMES[randomNumber()];
-};
-
-console.log(nameGenerator());
+getUserInput();
