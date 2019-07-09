@@ -78,10 +78,6 @@ const ANSWER = document.querySelector("#answer");
 function checkAnswer() {
 };
 
-function getUserInput() {
-    var userInput = ANSWER.nodeValue;
-};
-
 // Create an addition equation
 function createAdditionEquation() {
     var a = randomNumber();
@@ -91,6 +87,8 @@ function createAdditionEquation() {
     return answer;
 };
 
+console.log(createAdditionEquation());
+
 // Pick a random number between 1 and 10
 function randomNumber() {
     var randomNumber = Math.floor(Math.random()*11);
@@ -99,5 +97,3 @@ function randomNumber() {
     };
     return randomNumber;
 };
-
-getUserInput();
