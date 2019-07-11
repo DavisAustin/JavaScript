@@ -11,9 +11,13 @@ var timer = [0,0,0,0];
 
 // Run a standard minute/second/hundredths timer:
 function runTimer() {
-    let currentTimer = timer[0] + ":" + timer[1] + ":"
+    let currentTimer = timer[0] + ":" + timer[1] + ":" + timer[2] + ":" + timer[3];
     theTimer.innerHTML = timer;
     timer[3]++;
+
+    timer[0] = Math.floor((timer[3]/100)/60);
+    timer[1] = Math.floor((timer[3]/100)/60);
+    timer[2] = Math.floor((timer[3]/100)/60);
 }
 
 // Match the text entered with the provided text on the page:

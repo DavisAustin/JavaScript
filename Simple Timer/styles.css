@@ -1,0 +1,44 @@
+body {
+    background: #eeeeee;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    font-family: Source Sans Pro, sans-serif;
+}
+
+#main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    border-radius: 2px;
+    padding: 80px;
+}
+
+#timer-container {
+    padding: 0 80px 0 80px;
+}
+
+#timer {
+    font-size: 5rem;
+    color: orangered;
+}
+
+#start-stop {
+    padding: 20px 80px;
+    font-size: 1.5em;
+    background: #fff;
+    color: orangered;
+    border: 2px orangered solid;
+    border-radius: 2px;
+}
+
+#start-stop:hover {
+    background: orangered;
+    color: white;
+    cursor: pointer;
+}
