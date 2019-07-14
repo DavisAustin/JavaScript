@@ -1,0 +1,40 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 500px;
+  padding: 80px 0;
+}
+
+#equation-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+#equation {
+  font-size: 5em;
+  color: #666;
+}
+
+#answer {
+  padding: 20px 0;
+  width: 400px;
+  resize: none;
+  font-size: 2rem;
+  text-align: center;
+  border: 2px #666 solid;
+  border-radius: 2px;
+}
