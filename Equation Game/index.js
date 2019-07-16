@@ -2,12 +2,13 @@ const EQUATION = document.querySelector("#equation");
 const ANSWER = document.querySelector("#answer");
 
 let gameRunning = false;
-let answer;
 // Can text area be numerical value only?
 let userAnswer = ANSWER.value;
+let answer = generateEquation();
 
 // Check if answer is equal to equation when user presses enter
 function checkAnswer() {
+    console.log("Checking Answer");
     console.log(answer);
 }
 
@@ -16,8 +17,8 @@ function generateEquation() {
     let a = randomNumber();
         b = randomNumber();
     EQUATION.innerHTML = a + " + " + b;
-    let answer = a + b;
-    return answer;
+    var equationSolution = a + b;
+    return equationSolution;
 }
 
 // Pick a random number between 1 and 10

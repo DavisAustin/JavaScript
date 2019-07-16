@@ -3,9 +3,9 @@ const THETIMER = document.querySelector("#timer");
 const THEBUTTON = document.querySelector("#start-stop");
 const RESET = document.querySelector("#reset");
 
-var timer = 0;
-var interval;
-var timerRunning = false;
+let timer = 0;
+let interval;
+let timerRunning = false;
 
 // Increases the timer variable incrementally by 1
 function countUp() {

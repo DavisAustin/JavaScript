@@ -40,3 +40,7 @@ body {
   border: 2px #888 solid;
   border-radius: 2px;
 }
+
+#answer:hover {
+  cursor: text;
+}
