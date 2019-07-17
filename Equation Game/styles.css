@@ -1,3 +1,7 @@
+html {
+  box-sizing: border-box;
+}
+
 body {
   display: flex;
   justify-content: center;
@@ -37,10 +41,29 @@ body {
   font-weight: 900;
   color: #888;
   text-align: center;
-  border: 2px #888 solid;
   border-radius: 2px;
 }
 
 #answer:hover {
   cursor: text;
+}
+
+#answer:focus {
+  outline: none;
+}
+
+.incorrect {
+  border: 4px lightcoral solid;
+}
+
+.neutral {
+  border: 4px #888 solid;
+}
+
+.correct {
+  border: 4px lightgreen solid;
+}
+
+.focused {
+  border: 4px #eee solid;
 }
