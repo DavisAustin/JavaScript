@@ -3,13 +3,24 @@ const ANSWER = document.querySelector("#answer");
 
 let gameRunning = false;
 // Can text area be numerical value only?
-let userAnswer;
 let equationAnswer;
+let equationAnswerLength;
+
+//Used when resetting incorrect answers
 let currentEquation;
 
-// Check if answer is equal to equation when user presses enter
+function resetFieldValue(field) {
+    console.log("Reset value");
+    field.value = "";
+}
+
+// Check if answer is equal to equation on keyup
+
 function checkAnswer() {
-    userAnswer = ANSWER.value;
+    let userAnswer = ANSWER.value;
+    let userAnswerLength = ANSWER.value.length;
+    console.log("User answer is " + userAnswer + " and user answer length is " + userAnswerLength);
+    console.log("Equation answer is " + equationAnswer + " and equation answer length is " + equationAnswerLength);
     if (equationAnswer == userAnswer) {
         console.log("Correct!");
         ANSWER.classList.replace("focused", "correct");
@@ -38,8 +49,10 @@ function generateEquation() {
         b = randomNumber();
     currentEquation = a + " + " + b;
     EQUATION.innerHTML = currentEquation;
-    equationAnswer = a + b;
-    return equationAnswer;
+    equationAnswer = `${a + b}`; //Template literal - inputting equations into strings (must use back-tick)
+    console.log(equationAnswer);
+    equationAnswerLength = equationAnswer.length;
+    console.log(equationAnswerLength);
 }
 
 // Pick a random number between 1 and 10
@@ -58,10 +71,9 @@ function addPlaceholder() {
 // Remove placeholder text from textarea
 function removePlaceholder() {
     console.log("Remove Placeholder");
-    ANSWER.value = "";
+    resetFieldValue(ANSWER);
     ANSWER.setAttribute("placeholder", "");
     ANSWER.classList.replace("neutral", "focused");
-    console.log(ANSWER.classList);
 }
 
 // Event listeners
