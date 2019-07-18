@@ -31,7 +31,7 @@ function checkAnswer() {
             ANSWER.classList.replace("correct", "focused");
             generateEquation();
         }, 500);
-    } else if (userAnswer > equationAnswer) {
+    } else if (userAnswerLength == equationAnswerLength && userAnswer != equationAnswer) {
         console.log("Incorrect!");
         EQUATION.innerHTML = "Incorrect!"
         ANSWER.classList.replace("focused", "incorrect");
