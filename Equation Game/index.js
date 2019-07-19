@@ -1,14 +1,21 @@
 const EQUATION = document.querySelector("#equation");
 const ANSWER = document.querySelector("#answer");
+const TIMER = document.querySelector("#timer");
+const SCORE = document.querySelector("#score");
 
+
+let timer = 10;
+let timerRunning = false;
+let interval;
+let score = 0;
 let gameRunning = false;
-// Can text area be numerical value only?
+
+
 let equationAnswer;
 let equationAnswerLength;
+let currentEquation; //Used when resetting incorrect answers
 
-//Used when resetting incorrect answers
-let currentEquation;
-
+// Helper function
 function resetFieldValue(field) {
     console.log("Reset value");
     field.value = "";
@@ -25,26 +32,34 @@ function checkAnswer() {
         console.log("Correct!");
         ANSWER.classList.replace("focused", "correct");
         EQUATION.innerHTML = "Correct!"
+        EQUATION.style.color = "#63d040";
+        addPointToScore();
         setTimeout(function() {
             console.log(equationAnswer);
             ANSWER.value = "";
             ANSWER.classList.replace("correct", "focused");
+            EQUATION.style.color = "#fff";
             generateEquation();
         }, 500);
     } else if (userAnswerLength == equationAnswerLength && userAnswer != equationAnswer) {
         console.log("Incorrect!");
-        EQUATION.innerHTML = "Incorrect!"
+        EQUATION.innerHTML = "Try Again!"
         ANSWER.classList.replace("focused", "incorrect");
+        EQUATION.style.color = "lightcoral";
         setTimeout(function() {
             ANSWER.value = "";
             EQUATION.innerHTML = currentEquation;
             ANSWER.classList.replace("incorrect", "focused");
+            EQUATION.style.color = "#fff";
         }, 500);
     }
 }
 
 // Create an addition equation
 function generateEquation() {
+    if (!timerRunning) {
+        startTimer();
+    }
     let a = randomNumber();
         b = randomNumber();
     currentEquation = a + " + " + b;
@@ -59,6 +74,36 @@ function generateEquation() {
 function randomNumber() {
     let randomNumber = Math.floor(Math.random()*10 + 1);
     return randomNumber;
+}
+
+function addPointToScore() {
+    console.log("added point")
+    score++;
+    SCORE.innerHTML = "Score: " + score;
+}
+
+function countDown() {
+    if (timer > 0) {
+        timer--;
+        TIMER.innerHTML = ":" + timer;
+        timerRunning = true;
+        return timer;
+    } else {
+        alert("Score:" + score);
+        clearInterval(interval);
+        timerRunning = false;
+    }
+}
+
+function startTimer() {
+    console.log("start timer")
+    interval = setInterval(countDown, 1000);
+}
+
+function resetGame() {
+    timer = 60;
+    timerRunning = false;
+    score = 0;
 }
 
 // Add placeholder text to textarea
