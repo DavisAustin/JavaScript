@@ -4,7 +4,7 @@ const TIMER = document.querySelector("#timer");
 const SCORE = document.querySelector("#score");
 
 
-let timer = 10;
+let timer = 60;
 let timerRunning = false;
 let interval;
 let score = 0;
@@ -89,8 +89,9 @@ function countDown() {
         timerRunning = true;
         return timer;
     } else {
-        alert("Score:" + score);
+        alert("Score: " + score);
         clearInterval(interval);
+        resetGame();
         timerRunning = false;
     }
 }
@@ -104,6 +105,7 @@ function resetGame() {
     timer = 60;
     timerRunning = false;
     score = 0;
+    TIMER.innerHTML = ":" + timer;
 }
 
 // Add placeholder text to textarea
