@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #eee;
+    height: 100vh;
+    font-size: 16px;
+}
+
+#main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: white;
+    width: 400px;
+    height: 400px;
+}
+
+#sample-text-container {
+    margin-bottom: 64px;
+}
+
+#sample-text {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.4em;
+}
+
+#user-text {
+    width: 200px;
+    padding: 10px;
+    resize: none;
+    text-align: center;
+    font-size: 1.4em
+}
