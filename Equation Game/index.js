@@ -27,15 +27,16 @@ function initialSetup() {
     TIMER.innerHTML = ":" + timerInitialValue;
 }
 
-window.onload = initialSetup;
-
 // Check if answer is equal to equation on keyup
 function checkAnswer() {
     let userAnswer = ANSWER.value;
     let userAnswerLength = ANSWER.value.length;
+    let checkEquationText = equationAnswer.substring(0, userAnswerLength);
     if (equationAnswer == userAnswer) {
         answerCorrect();
-    } else if (userAnswerLength == equationAnswerLength && userAnswer != equationAnswer) {
+    } else if (userAnswer == checkEquationText) {
+
+    } else {
         answerIncorrect();
     }
 }
@@ -58,15 +59,15 @@ function answerCorrect() {
 // Incorrect Answer Function
 function answerIncorrect() {
     console.log("Incorrect!");
-        EQUATION.innerHTML = "Try Again!"
-        ANSWER.classList.replace("focused", "incorrect");
-        EQUATION.style.color = "lightcoral";
-        setTimeout(function() {
-            ANSWER.value = "";
-            EQUATION.innerHTML = currentEquation;
-            ANSWER.classList.replace("incorrect", "focused");
-            EQUATION.style.color = "#fff";
-        }, 500);
+    EQUATION.innerHTML = "Try Again!"
+    ANSWER.classList.replace("focused", "incorrect");
+    EQUATION.style.color = "lightcoral";
+    setTimeout(function() {
+        ANSWER.value = "";
+        EQUATION.innerHTML = currentEquation;
+        ANSWER.classList.replace("incorrect", "focused");
+        EQUATION.style.color = "#fff";
+    }, 500);
 }
 
 // Create an addition equation
@@ -142,3 +143,6 @@ ANSWER.addEventListener("focus", removePlaceholder, false);
 ANSWER.addEventListener("blur", addPlaceholder, false);
 ANSWER.addEventListener("click", generateEquation, false);
 ANSWER.addEventListener("keyup", checkAnswer, false);
+
+// Onload Events
+window.onload = initialSetup;
