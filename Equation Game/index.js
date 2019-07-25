@@ -26,14 +26,16 @@ function resetFieldValue(field) {
 function checkAnswer() {
     let userAnswer = ANSWER.value;
     let userAnswerLength = ANSWER.value.length;
+    let substringCheck = 
     console.log("User answer is " + userAnswer + " and user answer length is " + userAnswerLength);
     console.log("Equation answer is " + equationAnswer + " and equation answer length is " + equationAnswerLength);
     if (equationAnswer == userAnswer) {
         console.log("Correct!");
         ANSWER.classList.replace("focused", "correct");
-        EQUATION.innerHTML = "Correct!"
-        EQUATION.style.color = "#63d040";
-        addPointToScore();
+        // EQUATION.innerHTML = "Correct!"
+        // EQUATION.style.color = "#63d040";
+        // addPointToScore();
+        answerCorrect(EQUATION);
         setTimeout(function() {
             console.log(equationAnswer);
             ANSWER.value = "";
@@ -53,6 +55,13 @@ function checkAnswer() {
             EQUATION.style.color = "#fff";
         }, 500);
     }
+}
+
+// Correct Answer Function
+function answerCorrect(i) {
+    i.innerHTML = "Correct!";
+    i.style.color = "#63d040"
+    addPointToScore();
 }
 
 // Create an addition equation
