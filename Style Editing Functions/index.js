@@ -4,32 +4,23 @@ const TIMER = document.querySelector("#timer");
 const SCORE = document.querySelector("#score");
 
 
-let timerInitialValue = 30
-let timer = timerInitialValue;
+let timer = 30;
 let timerRunning = false;
 let interval;
 let score = 0;
 let gameRunning = false;
 
 
+// Store current equation information
 let equationAnswer;
 let equationAnswerLength;
 let currentEquation; //Used when resetting incorrect answers
 
-// Helper function
-function resetFieldValue(field) {
-    console.log("Reset value");
-    field.value = "";
-}
+// Helper functions
 
-function initialSetup() {
-    console.log("Initial Setup");
-    TIMER.innerHTML = ":" + timerInitialValue;
-}
-
-window.onload = initialSetup;
 
 // Check if answer is equal to equation on keyup
+
 function checkAnswer() {
     let userAnswer = ANSWER.value;
     let userAnswerLength = ANSWER.value.length;
@@ -75,13 +66,11 @@ function generateEquation() {
         startTimer();
     }
     let a = randomNumber();
-        b = randomNumber();
+    let b = randomNumber();
     currentEquation = a + " + " + b;
     EQUATION.innerHTML = currentEquation;
     equationAnswer = `${a + b}`; //Template literal - inputting equations into strings (must use back-tick)
-    console.log(equationAnswer);
     equationAnswerLength = equationAnswer.length;
-    console.log(equationAnswerLength);
 }
 
 // Pick a random number between 1 and 10
@@ -116,10 +105,10 @@ function startTimer() {
 }
 
 function resetGame() {
-    timer = timerInitialValue;
+    timer = 30;
     timerRunning = false;
     score = 0;
-    TIMER.innerHTML = ":" + timerInitialValue;
+    TIMER.innerHTML = ":" + timer;
 }
 
 // Add placeholder text to textarea
@@ -132,7 +121,7 @@ function addPlaceholder() {
 // Remove placeholder text from textarea
 function removePlaceholder() {
     console.log("Remove Placeholder");
-    resetFieldValue(ANSWER);
+    ANSWER.value = "";
     ANSWER.setAttribute("placeholder", "");
     ANSWER.classList.replace("neutral", "focused");
 }

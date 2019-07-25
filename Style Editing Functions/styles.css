@@ -1,0 +1,150 @@
+/* Font Styling */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  padding: 0;
+  margin: 0;
+}
+
+h4 {
+  font-size: 1.2em;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(217deg, #f3b245, #f78867, #67b0f7, #67e3f7);
+  background-size: 800% 800%;
+  -webkit-animation: bgGradient 51s ease infinite;
+  -moz-animation: bgGradient 51s ease infinite;
+  animation: bgGradient 51s ease infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#main {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 500px;
+  padding: 140px 80px;
+  background: rgba(255, 255, 255, .4);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  border-radius: 2px;
+}
+
+#score-container {
+  position: absolute;
+  top: 32px;
+  left: 32px;
+}
+
+#score {
+  color: white;
+}
+
+#timer-container {
+  position: absolute;
+  top: 32px;
+  right: 32px;
+}
+
+#timer {
+  color: white;
+}
+
+#equation-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+#equation {
+  font-size: 5em;
+  color: #fff;
+  padding: 0;
+  margin: 0 0 64px 0;
+}
+
+#answer {
+  padding: 20px 0;
+  width: 400px;
+  resize: none;
+  font-size: 2rem;
+  font-weight: 900;
+  color: #c2ced4;
+  text-align: center;
+  border-radius: 2px;
+  transition: box-shadow 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #c2ced4;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #c2ced4;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: #c2ced4;
+}
+
+#answer:hover {
+  cursor: text;
+  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+#answer:focus {
+  outline: none;
+  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.incorrect {
+  border: 4px lightcoral solid;
+}
+
+.neutral {
+  border: 4px #fff solid;
+}
+
+.correct {
+  border: 4px #63d040 solid;
+}
+
+.focused {
+  border: 4px #eee solid;
+}
+
+/* BG Animation Keyframes */
+@-webkit-keyframes bgGradient {
+  0%{background-position:91% 0%}
+  50%{background-position:10% 100%}
+  100%{background-position:91% 0%}
+}
+@-moz-keyframes bgGradient {
+  0%{background-position:91% 0%}
+  50%{background-position:10% 100%}
+  100%{background-position:91% 0%}
+}
+@keyframes bgGradient { 
+  0%{background-position:91% 0%}
+  50%{background-position:10% 100%}
+  100%{background-position:91% 0%}
+}
